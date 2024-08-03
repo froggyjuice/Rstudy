@@ -1,0 +1,28 @@
+# [R] 작업 디렉토리 (Working Directory) 지정 - getwd(), setwd()
+# R에는 작업 디렉토리 (Working directory)라는 개념이 있다. SPSS에는 없는 개념이고, SAS의 라이브러리와는 약간 다른 개념인데, R의 작업 디렉토리는 일의 편리함을 극대화해주는 도구다.
+## 방법
+### 거두절미하고 작업 디렉토리를 지정하는 코드는 다음과 같다.
+
+setwd("C:/Users/user/Documents/Tistory_blog")
+
+# 원하는 폴더의 위치를 setwd("")안에 넣어주기만 하면 된다. 
+# 이때 탐색기와 같은 프로그램에서 위치를 복사에 R 혹은 R studio에 붙여 넣으면 /이 아니라 \로 입력되는데, 이는 일일이 "/"로 바꿔주어야 한다. 혹은 R studio내에서 Ctrl + F로 한 번에 바꿔주거나, 메모장의 Ctrl + H기능으로 한 번에 바꿔주면 된다.
+# Mac OS이용자는 바꿔줄 필요 없이 바로 붙여 넣으면 된다.
+### 작업 디렉토리가 잘 지정되었는지 확인할 수도 있는데 코드는 다음과 같다.
+
+getwd()
+
+#getwd()를 실행하면 다음과 같이 반환되는 것을 볼 수 있다.
+
+[1] "C:/Users/user/Documents/Tistory_blog"
+ 
+## 이점
+### 워킹 디렉토리의 이점은 효율성이다. 예를 들어 "C:\Users\user\Documents\Tistory_blog"안에 있는 "Data_220804.xlsx"를 지정하기 위해서는 일반적으로 다음과 같이 지정해야 한다.
+
+"C:/Users/user/Documents/Tistory_blog/Data_220804.xlsx"
+
+## 하지만 이미 "C:\Users\user\Documents\Tistory_blog"을 워킹 디렉토리로 지정해 두었으므로 앞으로는 다음과 같이 언급해도 이는 위와 같은 파일을 가리키는 것과 같다.
+
+"Data_220804.xlsx"
+
+#끝#
