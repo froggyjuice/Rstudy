@@ -1,0 +1,26 @@
+# 필요한 라이브러리 로드
+library(ggplot2)
+
+# mtcars 데이터셋 불러오기
+data("mtcars")
+
+# 데이터 확인
+head(mtcars)
+
+# 회귀분석 모델 생성: mpg를 종속 변수로 하고, hp와 wt를 독립 변수로 설정
+model <- lm(mpg ~ hp + wt, data = mtcars)
+
+# 회귀분석 결과 출력
+summary(model)
+
+# 회귀선 시각화
+ggplot(mtcars, aes(x = hp, y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, col = "blue") +
+  labs(title = "회귀분석: HP와 MPG",
+       x = "마력 (HP)",
+       y = "연비 (MPG)")
+
+# 잔차 플롯
+par(mfrow = c(2, 2))
+plot(model)
